@@ -1,16 +1,16 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+
 const TodoList = ({ todos, handleComplete }) => {
   return (
-    <div>
-        {todos.map(todo => (
-        <div key={todo.id} style={{ 
+    <>
+      {todos.map(todo => (
+        <li key={todo.id} style={{ 
           padding: "10px", 
           margin: "5px", 
           border: "1px solid #ccc",
+          listStyle: "none"  // Remove bullet points
         }}>
           {todo.text}
-          
           {!todo.completed && (
             <button 
               onClick={() => handleComplete(todo.id)}
@@ -19,10 +19,10 @@ const TodoList = ({ todos, handleComplete }) => {
               Complete
             </button>
           )}
-        </div>
+        </li>
       ))}
-    </div>
-  )
+    </>
+  );
 }
 
-export default TodoList
+export default TodoList;
