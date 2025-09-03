@@ -11,15 +11,16 @@ const App = () => {
   ]);
 
   const handleComplete = (id) => {
-    setTodos(todos.map(todo => 
-      todo.id === id ? { ...todo, completed: true } : todo
-    ));
-  };
+  const updatedTodos = todos.map(todo => 
+    todo.id === id ? { ...todo, completed: true } : todo
+  );
+  setTodos(updatedTodos);
+};
 
   return (
     <div>
       <h1>My Todo List</h1>
-      <ul>  {/* Add ul wrapper */}
+      <ul> 
         <TodoList todos={todos} handleComplete={handleComplete} />
       </ul>
     </div>
