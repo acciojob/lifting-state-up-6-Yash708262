@@ -15,6 +15,7 @@ const TodoList = ({ todos, handleComplete }) => {
             <button 
               onClick={() => handleComplete(todo.id)}
               style={{ marginLeft: "10px" }}
+              data-testid="complete-button"
             >
               Complete
             </button>
